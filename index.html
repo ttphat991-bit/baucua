@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bầu Cua Cá Cọp</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="game">
+  <h1>🎲 BẦU CUA CÁ CỌP 🎲</h1>
+
+  <div class="dice-box">
+    <div class="dice" id="d1"></div>
+    <div class="dice" id="d2"></div>
+    <div class="dice" id="d3"></div>
+  </div>
+
+  <button onclick="roll()">LẮC</button>
+  <div class="result" id="result"></div>
+  <div id="bonus" class="bonus"></div>
+
+</div>
+
+<div class="admin" id="admin">
+  <div class="admin-box">
+    <h3>🛠 Admin ép tỉ lệ</h3>
+
+    <div id="list"></div>
+
+    <button onclick="equalize()">⚖️ Chia đều tỉ lệ</button>
+    
+    <button onclick="save()">💾 Lưu</button>
+    
+
+    <div class="stats">
+	  <h3>📊 Thống kê thực tế</h3>
+	  <table id="statsTable"></table>
+	</div>
+	<button onclick="resetStats()">📊 Reset thống kê</button>
+	<button onclick="closeAdmin()">Đóng</button>
+  </div>
+</div>
+
+<div class="admin-btn" onclick="openAdmin()">⚙ Cài đặt</div>
+<audio id="soundShake" src="shake.mp3" loop></audio>
+<audio id="soundWin2" src="win2.wav"></audio>
+<audio id="soundWin3" src="win3.wav"></audio>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
