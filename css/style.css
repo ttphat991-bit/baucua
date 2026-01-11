@@ -44,7 +44,11 @@ body::before{
   box-shadow:
     0 20px 60px rgba(0,0,0,.8),
     inset 0 0 0 1px rgba(255,215,0,.15);
+
+  display:flex;          /* 🔥 THÊM */
+  flex-direction:column; /* 🔥 THÊM */
 }
+
 
 /* ===== TIÊU ĐỀ ===== */
 h1{
@@ -244,4 +248,103 @@ button:active{
   color:#fff;
   border:1px solid #334155;
   cursor:pointer;
+}
+
+/* ===== LỊCH SỬ PHIÊN CHƠI ===== */
+.history{
+  padding:12px 10px;
+  background:linear-gradient(180deg,#020617,#020617);
+  border-radius:20px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(56,189,248,.15),
+    0 8px 24px rgba(0,0,0,.6);
+
+  max-height:32vh;      /* 🔥 CHỈ SCROLL PHẦN NÀY */
+  overflow-y:auto;
+}
+
+/* tiêu đề */
+.history h3{
+  margin:4px 0 10px;
+  text-align:center;
+  font-size:14px;
+  letter-spacing:.5px;
+  color:#38bdf8;
+}
+
+
+/* danh sách */
+#historyList{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+/* từng phiên */
+.history-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:8px 10px;
+  border-radius:14px;
+
+  background:#0f172a;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.06),
+    0 4px 10px rgba(0,0,0,.5);
+
+  font-size:13px;
+  line-height:1.3;
+}
+
+/* thắng x2 */
+.history-item.win2{
+  border-left:4px solid #facc15;
+  box-shadow:
+    inset 0 0 0 1px rgba(250,204,21,.2),
+    0 0 12px rgba(250,204,21,.25);
+}
+
+/* thắng x3 */
+.history-item.win3{
+  border-left:4px solid #f97316;
+  box-shadow:
+    inset 0 0 0 1px rgba(249,115,22,.25),
+    0 0 18px rgba(249,115,22,.35);
+}
+
+/* thời gian */
+.history-time{
+  font-size:11px;
+  opacity:.65;
+  white-space:nowrap;
+  margin-left:6px;
+}
+
+/* nút xóa lịch sử */
+.clear-history{
+  margin-top:8px;
+  padding:10px;
+  width:100%;
+
+  border-radius:14px;
+  border:1px solid #334155;
+
+  background:#020617;
+  color:#fff;
+  font-size:14px;
+}
+
+.clear-history:active{
+  transform:scale(.97);
+}
+/* ===== APP WRAPPER ===== */
+.app{
+  width:100%;
+  max-width:420px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
