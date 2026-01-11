@@ -110,6 +110,7 @@ function roll(){
     result.innerText = "Kết quả: " + res.join(" • ")
 	// 🔥 tính thưởng
 	let bonus = checkBonus(res)
+	addHistory(res, bonus)
 	// 🔊 âm thanh thưởng
 	if(bonus === 2){
 	  soundWin2.currentTime = 0
@@ -258,3 +259,4 @@ function clearHistory(){
 
 /* load khi mở app */
 renderHistory()
+
