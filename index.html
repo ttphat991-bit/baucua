@@ -9,25 +9,27 @@
 </head>
 
 <body>
-<div class="game">
-  <h1>🎲 BẦU CUA CÁ CỌP 🎲</h1>
-
-  <div class="dice-box">
-    <div class="dice" id="d1"></div>
-    <div class="dice" id="d2"></div>
-    <div class="dice" id="d3"></div>
-  </div>
-
-  <button onclick="roll()">LẮC</button>
-  <div class="result" id="result"></div>
-  <div id="bonus" class="bonus"></div>
-
-</div>
-<div class="history">
-  <h3>📜 Lịch sử phiên</h3>
-  <div id="historyList"></div>
-  <button class="clear-history" onclick="clearHistory()">🗑 Xóa lịch sử</button>
-</div>
+<div class="app">
+	<div class="game">
+	  <h1>🎲 BẦU CUA CÁ CỌP 🎲</h1>
+	
+	  <div class="dice-box">
+	    <div class="dice" id="d1"></div>
+	    <div class="dice" id="d2"></div>
+	    <div class="dice" id="d3"></div>
+	  </div>
+	
+	  <button onclick="roll()">LẮC</button>
+	  <div class="result" id="result"></div>
+	  <div id="bonus" class="bonus"></div>
+	
+	</div>
+	<div class="history">
+	  <h3>📜 Lịch sử phiên</h3>
+	  <div id="historyList"></div>
+	  <button class="clear-history" onclick="clearHistory()">🗑 Xóa lịch sử</button>
+	</div>
+</div>	
 <div class="admin" id="admin">
   <div class="admin-box">
     <h3>🛠 Admin ép tỉ lệ</h3>
@@ -57,4 +59,5 @@
 
 </body>
 </html>
+
 
