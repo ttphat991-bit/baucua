@@ -210,4 +210,51 @@ function resetStats(){
   stats=[0,0,0,0,0,0]
   localStorage.setItem("stats",JSON.stringify(stats))
   render()
+
 }
+/* ===== LỊCH SỬ PHIÊN ===== */
+let historyData = JSON.parse(localStorage.getItem("history") || "[]")
+
+function addHistory(res, bonus){
+  const time = new Date().toLocaleTimeString("vi-VN")
+  historyData.unshift({
+    time,
+    res: [...res],
+    bonus
+  })
+
+  if(historyData.length > 20) historyData.pop() // giới hạn 20 phiên
+
+  localStorage.setItem("history", JSON.stringify(historyData))
+  renderHistory()
+}
+
+function renderHistory(){
+  const box = document.getElementById("historyList")
+  if(!box) return
+
+  box.innerHTML = ""
+
+  historyData.forEach(h=>{
+    const div = document.createElement("div")
+    div.className = "history-item" + (h.bonus===2?" win2":h.bonus===3?" win3":"")
+    div.innerHTML = `
+      <div>
+        🎲 ${h.res.join(" • ")}
+        ${h.bonus>1 ? `💰 x${h.bonus}` : ""}
+      </div>
+      <div class="history-time">${h.time}</div>
+    `
+    box.appendChild(div)
+  })
+}
+
+function clearHistory(){
+  if(!confirm("Xóa toàn bộ lịch sử?")) return
+  historyData = []
+  localStorage.removeItem("history")
+  renderHistory()
+}
+
+/* load khi mở app */
+renderHistory()
