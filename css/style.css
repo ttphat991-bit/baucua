@@ -19,7 +19,7 @@ body{
 
   display:flex;
   justify-content:center;
-  align-items:center;
+  align-items:flex-start;
   padding:12px;
 }
 
@@ -348,3 +348,4 @@ button:active{
   flex-direction:column;
   gap:12px;
 }
+
